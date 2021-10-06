@@ -1,28 +1,48 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 profileColumn">
+          <ProfileSidebar />
+        </div>
+        <div class="col-lg-8 contentColumn">
+
+          <HeaderTop />
+
+          <div class="bodyContent">
+            <div class="pageCointainer">
+              <router-view />
+              <Footer />
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bact To Top -->
+    <a href="javascript:void(0);" id="backtotop"><i class="icofont-bubble-up"></i></a>
+    <!-- Bact To Top -->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import ProfileSidebar from "./components/ProfileSidebar";
+import Footer from "./components/Footer";
+import HeaderTop from "./components/HeaderTop";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HeaderTop,
+    ProfileSidebar,
+    Footer,
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>

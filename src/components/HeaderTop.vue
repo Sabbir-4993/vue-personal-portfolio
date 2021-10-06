@@ -1,0 +1,25 @@
+<template>
+  <!-- HeaderTop -->
+  <header class="header clearfix">
+    <a href="javascript:void(0)" class="menu_btn"><i class="icofont-navigation-menu"></i>Menu</a>
+    <nav class="mainMenu">
+      <ul class="clearfix">
+        <li><router-link to="/"><i class="icon icon-House"></i><span>Home</span></router-link></li>
+        <li><router-link to="/Resume"><i class="icon icon-User"></i><span>Resume</span></router-link></li>
+        <li><router-link to="/Portfolio"><i class="icon icon-Bulb"></i><span>Portfolio</span></router-link></li>
+        <li><router-link to="/Contact"><i class="icon icon-Imbox"></i><span>Contact</span></router-link></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- HeaderTop -->
+</template>
+
+<script>
+export default {
+  name: "HeaderTop"
+}
+</script>
+
+<style scoped>
+
+</style>
