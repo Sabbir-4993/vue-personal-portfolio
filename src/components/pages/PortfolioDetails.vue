@@ -2,19 +2,19 @@
   <div>
     <section class="comonSection thumbSection">
       <ul id="folioGallery">
-        <li data-thumb="assets/images/folio/13.jpg" data-src="assets/images/folio/13.jpg">
+        <li data-thumb="assets/images/folio/13.jpg" data-src="'assets/images/folio/13.jpg'">
           <div class="folioThumb">
-            <img src="assets/images/folio/13.jpg" alt=""/>
+            <img :src="'assets/images/folio/13.jpg'" alt=""/>
           </div>
         </li>
-        <li data-thumb="assets/images/folio/14.jpg" data-src="assets/images/folio/14.jpg">
+        <li data-thumb="assets/images/folio/14.jpg" data-src="'assets/images/folio/14.jpg'">
           <div class="folioThumb">
-            <img src="assets/images/folio/14.jpg" alt=""/>
+            <img :src="'assets/images/folio/14.jpg'" alt=""/>
           </div>
         </li>
-        <li data-thumb="assets/images/folio/15.jpg" data-src="assets/images/folio/15.jpg">
+        <li data-thumb="'assets/images/folio/15.jpg'" data-src="'assets/images/folio/15.jpg'">
           <div class="folioThumb">
-            <img src="assets/images/folio/15.jpg" alt=""/>
+            <img :src="'assets/images/folio/15.jpg'" alt=""/>
           </div>
         </li>
       </ul>

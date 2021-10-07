@@ -1,8 +1,4 @@
 <template>
-<div>
-  <section class="comonSection mapSection mb30">
-    <div class="map" id="map"></div>
-  </section>
   <section class="comonSection contactSection">
     <div class="container-fluid">
       <div class="row">
@@ -13,60 +9,71 @@
       <div class="row mb30">
         <div class="col-lg-8">
           <div class="contact_form">
-            <form method="post" action="#" id="contactForm">
-              <div class="row">
-                <div class="col-lg-6">
-                  <input type="text" class="required" name="full_name" placeholder="Full Name *"/>
-                </div>
-                <div class="col-lg-6">
-                  <input type="text" class="required" name="email" placeholder="Email *"/>
-                </div>
-                <div class="col-lg-6">
-                  <input type="text" name="phone" placeholder="Phone"/>
-                </div>
-                <div class="col-lg-6">
-                  <input type="text" class="required" name="sjubject" placeholder="Subject *"/>
-                </div>
-                <div class="col-lg-12">
-                  <textarea name="message" class="required" placeholder="Message *"></textarea>
-                </div>
-                <div class="col-lg-12">
-                  <button type="submit" class="btt_btn"><span><i class="icon icon-Mail"></i>Send Message</span></button>
-                </div>
-              </div>
+            <form ref="form" @submit.prevent="sendEmail" @submit="submitForm">
+              <label>Name</label>
+              <input type="text" name="from_name" placeholder="Your Full Name" required="">
+              <label>Email</label>
+              <input type="email" name="from_email" placeholder="Your Email Address" required="">
+              <label>Message</label>
+              <textarea name="message"></textarea>
+              <input type="submit" value="Send" class="btt_btn float-right">
             </form>
           </div>
+
         </div>
         <div class="col-lg-4">
           <div class="icon_box_01">
             <i class="icon icon-Mail"></i>
             <h3>Email Address</h3>
-            <p>k.melissa@caroll.me</p>
+            <p>sabbir5795@gmail.com</p>
           </div>
           <div class="icon_box_01">
             <i class="icon icon-Phone"></i>
             <h3>Phone Number</h3>
-            <p>1.800.987.6987</p>
+            <p>+8801521463599</p>
+            <p>+8801920823381</p>
           </div>
           <div class="icon_box_01 addrBox">
             <i class="icon icon-Pointer"></i>
             <h3>Address</h3>
             <p>
-              189 Lodge Avenue,
-              Dagenham, RM8 2HQ,
-              United Kingdom
+              Basabo, Dhaka-1214
             </p>
           </div>
         </div>
       </div>
     </div>
   </section>
-</div>
 </template>
 
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+
 <script>
+import emailjs from 'emailjs-com';
+
 export default {
-  name: "Contact"
+  name: "Contact",
+
+  methods: {
+    sendEmail() {
+      emailjs.sendForm('service_r9404xq', 'template_yt7ci89', this.$refs.form, 'user_2mq34F2xrlKEfo7KMvI9O')
+          .then((result) => {
+            console.log('Message Send Successfully!', result.text);
+            this.resetForm();
+          }, (error) => {
+            console.log('FAILED...', error.text);
+          });
+      },
+    submitForm : function(event){
+      event.preventDefault(),
+      event.target.reset(),
+      window.alert('Message Send Successfully!');
+    }
+
+    }
+
 }
 </script>
 
